@@ -10,5 +10,6 @@ FROM alpine:latest
 RUN apk --no-cache add ca-certificates
 WORKDIR /root/
 COPY --from=builder /go/src/github.com/kasuboski/test-go-api/app .
-EXPOSE 8080
+ENV PORT 8080
+EXPOSE $PORT 
 CMD ["./app"]
