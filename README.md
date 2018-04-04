@@ -23,3 +23,8 @@ The second stage copies that binary sets the port and runs the binary.
 Build it with `docker build -t kasuboski/test-go-api:latest .`
 
 Run it with `docker run -p 8080:8080 kasuboski/test-go-api`
+
+## Kubernetes
+Deployment and service in kube.yml
+
+Apply to cluster with `kubectl apply -f kube.yml`
