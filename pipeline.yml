@@ -1,0 +1,17 @@
+resources:
+- name: git-resource
+  type: git
+  source: 
+    uri: https://github.com/kasuboski/test-go-api.git
+    branch: master
+
+- name: git-resource-image
+  type: docker-image
+  source:
+    repository: tcp://192.168.99.100:2376/kasuboski/test-go-api 
+
+jobs:
+- name: build-image
+  plan:
+  - get: git-resource
+  - put: git-resource-image
