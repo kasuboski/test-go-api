@@ -1,0 +1,37 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: goapi
+  name: goapi
+spec:
+  externalTrafficPolicy: Cluster
+  ports:
+  - port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: goapi 
+  sessionAffinity: None
+  type: NodePort
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: goapi-deployment
+spec:
+  selector:
+    matchLabels:
+      app: goapi 
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: goapi 
+    spec:
+      containers:
+      - name: test-go-api
+        image: kasuboski/test-go-api:v1
+        ports:
+        - containerPort: 8080
