@@ -20,7 +20,7 @@ func main() {
 	r.Use(render.SetContentType(render.ContentTypeJSON))
 
 	r.Get("/", func(w http.ResponseWriter, r *http.Request) {
-		render.Render(w, r, NewWelcomeResponse("hello"))
+		render.Render(w, r, NewWelcomeResponse("hello world"))
 	})
 
 	port := getEnv("PORT", "8080")
