@@ -29,7 +29,7 @@ spec:
     spec:
       containers:
       - name: test-go-api
-        image: kasuboski/test-go-api:v1
+        image: localhost:5000/kasuboski/test-go-api:0ef880b4c35de0e0d6bc7c86a4218d0afe6e53a6 
         ports:
         - name: api-port
           containerPort: 8080

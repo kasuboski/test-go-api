@@ -26,5 +26,10 @@ Run it with `docker run -p 8080:8080 kasuboski/test-go-api`
 
 ## Kubernetes
 Deployment and service in kube.yml
+The deployment points to a local docker registry as outlined below.
 
 Apply to cluster with `kubectl apply -f kube.yml`
+
+## Concourse
+The docker-image-resource is pointing to a local docker registry that's in the cluster.
+This needs to be applied from the `local-registry.yml` file and minikube needs to be started with `--insecure-registry localhost:5000`

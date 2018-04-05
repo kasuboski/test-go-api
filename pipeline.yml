@@ -18,4 +18,6 @@ jobs:
   - get: git-resource
     trigger: true
   - put: git-resource-image
-    params: {build: git-resource}
+    params: 
+      build: git-resource
+      tag: git-resource/.git/HEAD
